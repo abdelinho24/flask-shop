@@ -1,0 +1,23 @@
+.Python
+
+# ignore auto-generated mac files
+.DS_Store
+
+# ignore python generated files
+*.pyc
+
+# ignore sass generated stuff
+.sass-cache
+
+# ignore virtualenv files
+bin/
+lib/
+env/
+include/
+local/
+
+*.sw[op]
+__pycache__
+*.db
+*.bak
+
