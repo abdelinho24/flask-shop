@@ -1,7 +1,0 @@
-setup.py
-Flask_Shop.egg-info/PKG-INFO
-Flask_Shop.egg-info/SOURCES.txt
-Flask_Shop.egg-info/dependency_links.txt
-Flask_Shop.egg-info/not-zip-safe
-Flask_Shop.egg-info/requires.txt
-Flask_Shop.egg-info/top_level.txt
