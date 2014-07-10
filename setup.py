@@ -29,7 +29,7 @@ description = ''
 
 setup(
     name='Flask-Shop',
-    version=find_version('flask-shop', '__init__.py'),
+    version=find_version('flask_shop', '__init__.py'),
     url='http://github.com/bdemirtas/flask-shop/',
     license='BSD',
     author='Burak Demirtas',
