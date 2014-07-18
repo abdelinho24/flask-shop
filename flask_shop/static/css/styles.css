@@ -1,0 +1,154 @@
+/* MAIN */
+/* line 6, ../sass/styles.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 10, ../sass/styles.scss */
+#wrap {
+  box-sizing: border-box;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -64px;
+  padding-top: 60px;
+  padding-bottom: 64px;
+}
+
+/* line 20, ../sass/styles.scss */
+#footer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 64px;
+  padding-top: 10px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background-color: #f5f5f5;
+}
+
+/* LOGIN */
+/* line 34, ../sass/styles.scss */
+.login_bx {
+  display: inline-block;
+  width: 284px;
+}
+/* line 37, ../sass/styles.scss */
+.login_bx img {
+  max-width: 100%;
+  margin-bottom: 22px;
+}
+/* line 41, ../sass/styles.scss */
+.login_bx input, .login_bx button {
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* PRODUCTS LIST */
+/* line 51, ../sass/styles.scss */
+.products_list .product {
+  margin-bottom: 4px;
+}
+/* line 53, ../sass/styles.scss */
+.products_list .product.added {
+  background: #f9f9f9;
+}
+/* line 56, ../sass/styles.scss */
+.products_list .product.template {
+  display: none;
+}
+/* line 60, ../sass/styles.scss */
+.products_list a.accordion-toggle {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 12px 14px;
+  text-decoration: none;
+  position: relative;
+}
+/* line 66, ../sass/styles.scss */
+.products_list a.accordion-toggle .brand {
+  font-size: 14px;
+}
+/* line 69, ../sass/styles.scss */
+.products_list a.accordion-toggle .title {
+  font-size: 24px;
+}
+/* line 71, ../sass/styles.scss */
+.products_list a.accordion-toggle .title .id {
+  margin-right: 8px;
+  color: #45abc9;
+}
+/* line 75, ../sass/styles.scss */
+.products_list a.accordion-toggle .title .price {
+  margin-left: 12px;
+  font-weight: 300;
+}
+/* line 79, ../sass/styles.scss */
+.products_list a.accordion-toggle .title .flag {
+  margin-left: 12px;
+  color: #f00;
+}
+/* line 84, ../sass/styles.scss */
+.products_list a.accordion-toggle img.picture {
+  max-width: 96px;
+  max-height: 52px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 6px;
+  margin: auto;
+}
+/* line 95, ../sass/styles.scss */
+.products_list .accordion-inner .description {
+  margin-bottom: 10px;
+}
+
+/* MODAL */
+/* line 104, ../sass/styles.scss */
+#modal_confirm {
+  width: 620px;
+  margin: -290px 0 0 -310px;
+}
+/* line 107, ../sass/styles.scss */
+#modal_confirm .modal-body {
+  max-height: 440px;
+}
+/* line 110, ../sass/styles.scss */
+#modal_confirm form {
+  margin-bottom: 0px;
+}
+/* line 113, ../sass/styles.scss */
+#modal_confirm legend {
+  margin-bottom: 10px;
+}
+/* line 116, ../sass/styles.scss */
+#modal_confirm textarea {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* line 120, ../sass/styles.scss */
+#modal_confirm .addresses {
+  padding-left: 10px;
+}
+/* line 122, ../sass/styles.scss */
+#modal_confirm .addresses .radio.inline {
+  vertical-align: top !important;
+  margin-left: 0px !important;
+}
+/* line 126, ../sass/styles.scss */
+#modal_confirm .addresses .radio.inline.other textarea {
+  width: 200px;
+  height: 60px;
+  margin-top: 5px;
+}
+/* line 133, ../sass/styles.scss */
+#modal_confirm .addresses address {
+  width: 180px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+/* line 139, ../sass/styles.scss */
+#modal_confirm textarea[name=notes], #modal_confirm textarea[name=ship_date] {
+  width: 100%;
+  height: 50px;
+}

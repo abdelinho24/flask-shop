@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Flask-Shop</title>
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> 
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/holder.js') }}"></script>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/styles.css') }}">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+</head>
+<body>
+<div id="wrap">
+ {% if current_user.is_authenticated()%}
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<div class="btn-toolbar pull-right" style="margin:0px;">
+				<div class="btn-group">
+					<a href="#" class="btn"><i class="icon-align-justify"></i> Order</a>
+					<a href="#" class="btn"><i class="icon-retweet"></i> Return</a>
+					<a href="#" class="btn"><i class="icon-bullhorn"></i> Promo</a>
+		            {% if current_user.is_admin()%}
+		              <li><a href="{{ url_for('admin.index') }}">Admin</a></li>
+		            {% endif %}
+				</div>
+				<div class="btn-group">
+					<a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-cog"></i> 
+						{{current_user.username}}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="{{ url_for('shop.logout') }}">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+<div id="content" class="container-fluid">
+{% block content %}
+{% endblock %}
+</div>
+</body>
+</html>

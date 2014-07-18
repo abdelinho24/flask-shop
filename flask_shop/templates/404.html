@@ -1,0 +1,31 @@
+{% block body %}
+<style>
+	h1 {
+		font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+		font-size: 67px;
+		text-align: center;
+		padding: 0px;
+		margin: 0px;
+	}
+	#u4690-2, #u4690-4, #u4690-6 {
+		font-size: 63px;
+		font-weight: normal;
+	}
+	#u4690-3 {
+		font-weight: bold;
+	}
+	.message-container{
+		position: absolute;
+		top: 0px;
+		right: 0px;
+	}
+</style>
+<div style="text-align: center;">
+<img src="{{ url_for('static', filename='images/chuck-norris.jpg') }}">
+<div class="message-container">
+	<h1 class="H1" id="u4690-2">&nbsp;Looks like</h1>
+	<h1 class="H1" id="u4690-4"><span id="u4690-3">CHUCK NORRIS</span></h1>
+	<h1 class="H1" id="u4690-6">&nbsp;broke this page</h1>
+</div>
+</div>
+{% endblock %}

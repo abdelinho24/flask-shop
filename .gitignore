@@ -5,6 +5,13 @@ __pycache__/
 # C extensions
 *.so
 
+# Sqlite3
+*.db
+
+# SublimeText Projects
+*.sublime-project
+*.sublime-workspace
+
 # Distribution / packaging
 .Python
 Flask_Shop.egg-info/
