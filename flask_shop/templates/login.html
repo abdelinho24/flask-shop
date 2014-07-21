@@ -3,8 +3,8 @@
 <div class="login-container" style="margin: 0 auto;text-align: center;">
 	<form class=form-horizontal action="{{ url_for('shop.login') }}" method=post>
 	  {{ form.hidden_tag() }}
-	  {{ form.alternative_mail(placeholder='Email') }}
-	  {{ form.email }}
+	  {{ form.email(placeholder='Email') }}
+	  <br/>
 	  {{ form.password(placeholder='Password') }}
 	  <div class=control-group>
 	    <div class=controls>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="cart">
+	<ul>
+		<li ng-repeat="item in cart">
+			<span>{{item.title}}</span>
+			<span>{{item.description}}</span>
+			<span>{{item.price}}</span>
+			<span ng-model="quantity">{{item.quantity}}</span>	
+			<button ng-click="removeItem($index)">Remove</button>
+		</li>
+	</ul>
+</div>
+
+<ul class="thumbnails">
+{% for product in product %}
+	<li class="span4"> 
+		<div ng-controller="CartController" class="thumbnail">
+			 <img data-src="{{ product.images }}" alt="{{product.name}}">
+			 <form ng-submit="addItem()">
+				 <h3 ng-model="name" class="item_name">{{product.name}}</h3>
+				 <p ng-model="description">{{product.description}}</p>
+				 <p ng-model="quantity"> <input value="1" class="item_Quantity" type="text"><br>
+				 <span ng-model="price" class="item_price">${{product.price}}</span><br>
+				 <input class="btn-primary" type="submit" value="Add to Cart">
+			 </form>
+  		</div>
+  	</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

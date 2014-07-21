@@ -2,7 +2,7 @@ from flask.ext.login import LoginManager, login_required, login_user, logout_use
 from flask import flash, redirect, url_for, session, render_template, request, Blueprint
 from flask_shop import app
 from .forms import LoginForm
-from .models import User
+from .models import User, Product, Order
 login_manager = LoginManager(app)
 flask_shop = Blueprint('shop', __name__, url_prefix='/shop')
 
@@ -14,7 +14,25 @@ def load_user(user_id):
 
 @flask_shop.route('/')
 def index():
-    return redirect(url_for('shop.login'))
+    products = Product.query.filter_by(discontinued=False).all()
+    return render_template('shop.html', products=products)
+
+@flask_shop.route('/product', methods=['GET']) # Retrive all products
+@flask_shop.route('/product', methods=['POST']) # Add new product
+@flask_shop.route('/product/<id>', methods=['GET']) # Retrive one product by id
+@flask_shop.route('/product/<id>', methods=['PUT']) # Update product by id
+@flask_shop.route('/product/<id>', methods=['DELETE']) # Delete product by id
+def product(id=None):
+    if request.method=='GET':
+        products = Product.objects.all()
+        return 'GET'
+    if request.method=='POST':
+        return 'POST'
+    if request.method=='PUT':
+        return 'PUT'
+    if request.method=='DELETE':
+        return 'DELETE'
+    return 'Product Admin page', 200
 
 
 @flask_shop.errorhandler(404)
@@ -29,9 +47,8 @@ def login():
         redirect()
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.objects.get_or_404(
-            email=request.form['alternative_mail'])
-        if user is not None and user.check_password(request.form['password']):
+        user = User.objects.get_or_404(email=form.email.data)
+        if user is not None and user.check_password(form.password.data):
             flash(u'Successfully logged in as %s' % user.email)
         session['user_id'] = user.id
         login_user(user)
@@ -39,9 +56,10 @@ def login():
     return render_template('login.html', form=form)
 
 
-@flask_shop.route("shop")
-def shop():
-    pass
+# @flask_shop.route("shop")
+# def shop():
+#     products = Product.query.filter(discontinued=False).all()
+#     render_template('shop', products=products)
 
 
 @flask_shop.route("/logout")

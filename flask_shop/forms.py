@@ -1,9 +1,9 @@
 from flask.ext.wtf import Form
-from wtforms import TextField, PasswordField, HiddenField
+from wtforms import PasswordField
+from flask.ext.wtf.html5 import EmailField
 from wtforms.validators import Required
 
 
 class LoginForm(Form):
-    alternative_mail = TextField('alternative_mail', [Required()])
-    email = HiddenField('email', [Required()])
+    email = EmailField('email', [Required()])
     password = PasswordField('Password', [Required()])

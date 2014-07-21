@@ -1,10 +1,11 @@
-<html>
+<html ng-app>
 <head>
   <title>Flask-Shop</title>
   <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> 
   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/holder.js') }}"></script>
-  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <script src="{{ url_for('static', filename='js/angular.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/flaskshop-cart.js') }}"></script>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/styles.css') }}">
   {% with messages = get_flashed_messages() %}
   {% if messages %}
@@ -16,7 +17,7 @@
   {% endif %}
 {% endwith %}
 </head>
-<body>
+<body ng-controller="CartController">
 <div id="wrap">
  {% if current_user.is_authenticated()%}
 <div class="navbar navbar-fixed-top">
@@ -24,12 +25,6 @@
 		<div class="container-fluid">
 			<div class="btn-toolbar pull-right" style="margin:0px;">
 				<div class="btn-group">
-					<a href="#" class="btn"><i class="icon-align-justify"></i> Order</a>
-					<a href="#" class="btn"><i class="icon-retweet"></i> Return</a>
-					<a href="#" class="btn"><i class="icon-bullhorn"></i> Promo</a>
-		            {% if current_user.is_admin()%}
-		              <li><a href="{{ url_for('admin.index') }}">Admin</a></li>
-		            {% endif %}
 				</div>
 				<div class="btn-group">
 					<a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
@@ -50,5 +45,6 @@
 {% block content %}
 {% endblock %}
 </div>
+</script>
 </body>
 </html>
