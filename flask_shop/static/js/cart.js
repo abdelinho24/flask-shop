@@ -27,14 +27,13 @@ var html = [].slice.call(document.querySelectorAll('.thumbnail'));
 		   				title: item.title, 
 		   				description: item.description, 
 		   				price: item.price, 
-		   				quantity: item.quantity.value || 1}
+		   				quantity: item.quantity.value || 1
+		   			}
 		   		);
-		   		getTotalPrice();
 		    };
 
 		    $scope.removeItem = function(index) {
 		   		$scope.cart.splice(index, 1);
-		   		getTotalPrice();
 		    };
 		     
 		    $scope.getTotalPrice = function(){
