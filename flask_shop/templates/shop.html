@@ -1,32 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="cart">
-	<ul>
+	<ul class="items" id="items">
 		<li ng-repeat="item in cart">
-			<span>{{item.title}}</span>
-			<span>{{item.description}}</span>
-			<span>{{item.price}}</span>
-			<span ng-model="quantity">{{item.quantity}}</span>	
+			<span class="label title">{{item.title|angular}}</span>
+			<span class="label description">{{item.description|angular}}</span> 
+			<span class="label price">{{item.price|angular}}</span>
+			<span class="label quantity" ng-model="quantity">{{item.quantity|angular}}</span>
 			<button ng-click="removeItem($index)">Remove</button>
 		</li>
 	</ul>
+	<div class="cartTotal">
+	</div>
 </div>
 
 <ul class="thumbnails">
-{% for product in product %}
-	<li class="span4"> 
-		<div ng-controller="CartController" class="thumbnail">
-			 <img data-src="{{ product.images }}" alt="{{product.name}}">
-			 <form ng-submit="addItem()">
-				 <h3 ng-model="name" class="item_name">{{product.name}}</h3>
-				 <p ng-model="description">{{product.description}}</p>
-				 <p ng-model="quantity"> <input value="1" class="item_Quantity" type="text"><br>
-				 <span ng-model="price" class="item_price">${{product.price}}</span><br>
-				 <input class="btn-primary" type="submit" value="Add to Cart">
-			 </form>
+{% for product in products %}
+  	<li class="span4"> 
+		<div id="{{product.name}}" class="thumbnail">
+		  <img src="{{product.image}}" alt="">
+		  <form ng-submit="addItem()">
+			 <h3 class="item_name">{{product.name}}</h3>
+			 <div class="item_description">{{product.description}}</div>
+			 <p> <input value="1" class="item_Quantity" type="text"></p><br>
+			 <span class="item_price">{{product.price}}</span><br>
+			 <input class="btn-primary" type="submit" value="Add to Cart">
+		   </form>
   		</div>
   	</li>
 {% endfor %}
 </ul>
-
 {% endblock %}

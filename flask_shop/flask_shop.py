@@ -6,6 +6,7 @@ from flask import Flask
 from flask.ext.mail import Mail
 from flask.ext.babel import Babel
 from flask.ext.bcrypt import Bcrypt
+from flask.ext.triangle import Triangle
 from flask_debugtoolbar import DebugToolbarExtension
 import config
 
@@ -14,8 +15,10 @@ app.config.from_object(config)
 mail = Mail(app)
 babel = Babel(app)
 bcrypt = Bcrypt(app)
+Triangle(app)
 
-toolbar = DebugToolbarExtension(app)
+
+# toolbar = DebugToolbarExtension(app)
 
 # logger = logging.getLogger(__name__)
 # flask_shop = Blueprint('flask_shop', __name__)

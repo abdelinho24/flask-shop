@@ -11,6 +11,7 @@ products = db.Table('products',
 )
 
 class Product(db.Model):
+    __tablename__ = 'product'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, unique=True)
     description = db.Column(db.String)
@@ -23,6 +24,7 @@ class Product(db.Model):
 
 
 class Order(db.Model):
+    __tablename__ = 'order'
     id = db.Column(db.Integer, primary_key=True)
     uuid = db.Column(db.String)
     stripe_id = db.Column(db.String)
@@ -41,6 +43,7 @@ class Order(db.Model):
 
 
 class User(db.Model, UserMixin):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String)
     password = db.Column(db.String)

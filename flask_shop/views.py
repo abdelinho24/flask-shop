@@ -14,7 +14,8 @@ def load_user(user_id):
 
 @flask_shop.route('/')
 def index():
-    products = Product.query.filter_by(discontinued=False).all()
+    # products = Product.query.filter_by(discontinued=False).all()
+    products = Product.query.all()
     return render_template('shop.html', products=products)
 
 @flask_shop.route('/product', methods=['GET']) # Retrive all products

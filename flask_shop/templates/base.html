@@ -1,10 +1,9 @@
-<html ng-app>
+<html ng-app="shopApp">
 <head>
   <title>Flask-Shop</title>
   <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script> 
   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/angular.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/flaskshop-cart.js') }}"></script>
+
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/styles.css') }}">
   {% with messages = get_flashed_messages() %}
@@ -18,7 +17,6 @@
 {% endwith %}
 </head>
 <body ng-controller="CartController">
-<div id="wrap">
  {% if current_user.is_authenticated()%}
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
@@ -45,6 +43,7 @@
 {% block content %}
 {% endblock %}
 </div>
-</script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/angular.min.js') }}"></script>
 </body>
 </html>
