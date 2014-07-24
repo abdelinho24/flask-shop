@@ -27,7 +27,8 @@ var html = [].slice.call(document.querySelectorAll('.thumbnail'));
 		   				title: item.title, 
 		   				description: item.description, 
 		   				price: item.price, 
-		   				quantity: item.quantity.value || 1
+		   				quantity: item.quantity.value || 1,
+		   				total_qty: item.price * item.quantity.value || 1,
 		   			}
 		   		);
 		    };

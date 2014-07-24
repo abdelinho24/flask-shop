@@ -11,7 +11,7 @@
 			 <span>Description: </span><div class="item_description">{{product.description}}</div>
 			 <span>Quantity: </span><input value="1" class="item_quantity" type="text"><br>
 			 <span>Price: </span><span class="item_price">{{product.price}}</span><br>
-			 <button type="submit" value="Add to Cart" class="btn btn-primary" id="submit">Add to Cart</button>
+			 <button type="submit" value="Add to Cart" class="btn btn-primary btn-xs" id="submit">Add to Cart</button>
 		   </form>
   		</div>
 	</div>
@@ -20,13 +20,14 @@
 	<div class="col-md-5">
 	<div class=" cart_container">
 		<div class="cart">
-			<h3>Cart</h3>
+			<h2>Cart</h2>
 			<ul class="items" id="items">
 				<li class="item" ng-repeat="item in cart">
-					<div class="cart_title">Title: {{item.title|angular}}</div>
-					<div class="cart_price">Price: {{item.price|angular}}</div>
-					<span class="cart_quantity" ng-model="quantity">Quantity: {{item.quantity|angular}}</span>
-					<button class="btn btn-primary" ng-click="removeItem($index)">Remove</button>
+					<div>Title: {{item.title|angular}}</div>
+					<div>Price: {{item.price|angular}}</div>
+					<span ng-model="quantity">Quantity: {{item.quantity|angular}}</span>
+					<div>Total price: {{item.total_qty|angular}}</div>
+					<button class="btn btn-primary btn-xs" ng-click="removeItem($index)">Remove</button>
 				</li>
 			</ul>
 			<div class="cartTotal">

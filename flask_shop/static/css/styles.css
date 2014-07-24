@@ -1,16 +1,16 @@
 /* MAIN */
 .cart_container{
-  /*  position: fixed;
-    top: 20px;
-    right: 0;*/
-/*    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.075);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.075);
     border: 1px solid #DDD;
     border-radius: 4px;
-    transition: all 0.2s ease-in-out 0s;*/
+    transition: all 0.2s ease-in-out 0s;
   } 
+.cart h2{
+  text-align: center;
+}
 
 .item{
-  /*padding-bottom: 10px;*/
+  padding-bottom: 10px;
 }  
 .item_quantity{
   height: 25px!Important;
